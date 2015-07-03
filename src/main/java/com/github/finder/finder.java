@@ -20,7 +20,21 @@ public class Finder {
     }
 
     private boolean isTarget(File file){
+	if(args.getName() != null){
+            flag &= checkTargetName(file, args.getName());
+        }
+
+
+
+
+
+
         return true;
+    }
+
+    private boolean checkTargetName(File file, String pattern){
+        String name = file.getName();
+        return name.indexOf(pattern) >= 0;
     }
 
     private void traverse(List<String> list, File dir){
