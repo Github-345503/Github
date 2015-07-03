@@ -24,6 +24,7 @@ public class Finder {
     }
 
     private boolean isTarget(File file){
+	boolean flag = true;
 	if(args.getName() != null){
             flag &= checkTargetName(file, args.getName());
         }
